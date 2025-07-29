@@ -1,0 +1,169 @@
+{
+  "name": "erpcafe-guatemala",
+  "version": "3.0.0",
+  "description": "🇬🇹 Sistema ERPNext v15 especializado para gestión integral de fincas cafetaleras guatemaltecas con cumplimiento ANACAFE y trazabilidad completa",
+  "main": "src/erpnext_finca_cafe/hooks.py",
+  "scripts": {
+    "install": "bash scripts/install.sh",
+    "setup": "python3 scripts/erpnext_v15_config.py",
+    "dev": "bench start",
+    "build": "bench build",
+    "migrate": "bench migrate",
+    "test": "bench run-tests erpnext_finca_cafe",
+    "lint": "flake8 src/",
+    "format": "black src/ --line-length 120",
+    "docs": "sphinx-build -b html docs/ docs/_build/",
+    "backup": "bench backup",
+    "restore": "bench restore"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eamori91/erpcafe.git"
+  },
+  "keywords": [
+    "erpnext",
+    "erp",
+    "coffee",
+    "cafe",
+    "guatemala",
+    "anacafe",
+    "agriculture",
+    "farming",
+    "traceability",
+    "quality-control",
+    "v15"
+  ],
+  "author": "ERPNext Guatemala Coffee Solutions",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eamori91/erpcafe/issues"
+  },
+  "homepage": "https://github.com/eamori91/erpcafe#readme",
+  "dependencies": {
+    "erpnext": "^15.0.0",
+    "frappe": "^15.0.0"
+  },
+  "devDependencies": {
+    "flake8": "^6.0.0",
+    "black": "^23.0.0",
+    "sphinx": "^7.0.0",
+    "pytest": "^7.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "python": ">=3.11.0"
+  },
+  "peerDependencies": {
+    "mariadb": ">=10.6.0",
+    "redis": ">=6.0.0",
+    "nginx": ">=1.20.0"
+  },
+  "erpnext": {
+    "version": "15.x",
+    "app_name": "erpnext_finca_cafe",
+    "app_title": "ERPCafe Guatemala",
+    "app_publisher": "ERPNext Guatemala Coffee Solutions",
+    "app_description": "Sistema integral para gestión de fincas cafetaleras con cumplimiento normativo guatemalteco",
+    "app_icon": "fa fa-coffee",
+    "app_color": "#8B4513",
+    "app_email": "info@erpcafe.gt",
+    "app_license": "MIT",
+    "required_apps": [
+      "frappe",
+      "erpnext"
+    ],
+    "include_js": [
+      "/assets/erpnext_finca_cafe/js/coffee_quality.js",
+      "/assets/erpnext_finca_cafe/js/harvest_tracking.js",
+      "/assets/erpnext_finca_cafe/js/employee_attendance.js"
+    ],
+    "include_css": [
+      "/assets/erpnext_finca_cafe/css/coffee_theme.css"
+    ],
+    "web_include_js": [
+      "/assets/erpnext_finca_cafe/js/web_coffee_portal.js"
+    ],
+    "web_include_css": [
+      "/assets/erpnext_finca_cafe/css/web_coffee_portal.css"
+    ]
+  },
+  "frappe": {
+    "version": "15.x",
+    "hooks": {
+      "app_name": "erpnext_finca_cafe",
+      "app_title": "ERPCafe Guatemala",
+      "app_publisher": "ERPNext Guatemala Coffee Solutions",
+      "app_description": "Sistema integral para gestión de fincas cafetaleras guatemaltecas",
+      "app_icon": "fa fa-coffee",
+      "app_color": "#8B4513",
+      "app_email": "info@erpcafe.gt",
+      "app_license": "MIT",
+      "app_version": "3.0.0",
+      "required_apps": ["erpnext"],
+      "after_install": "erpnext_finca_cafe.setup.install.after_install",
+      "boot_session": "erpnext_finca_cafe.boot.boot_session",
+      "doc_events": {
+        "Stock Entry": {
+          "on_submit": "erpnext_finca_cafe.api.stock_entry.on_submit"
+        },
+        "Employee": {
+          "validate": "erpnext_finca_cafe.api.employee.validate"
+        },
+        "Item": {
+          "autoname": "erpnext_finca_cafe.api.item.autoname"
+        }
+      },
+      "scheduler_events": {
+        "daily": [
+          "erpnext_finca_cafe.tasks.daily.update_coffee_prices",
+          "erpnext_finca_cafe.tasks.daily.check_quality_controls"
+        ],
+        "weekly": [
+          "erpnext_finca_cafe.tasks.weekly.generate_production_reports"
+        ],
+        "monthly": [
+          "erpnext_finca_cafe.tasks.monthly.calculate_employee_performance",
+          "erpnext_finca_cafe.tasks.monthly.update_certification_status"
+        ]
+      },
+      "jinja": {
+        "methods": [
+          "erpnext_finca_cafe.utils.get_coffee_grades",
+          "erpnext_finca_cafe.utils.get_harvest_summary"
+        ]
+      },
+      "fixtures": [
+        {
+          "doctype": "Custom Field",
+          "filters": [
+            [
+              "name",
+              "in",
+              [
+                "Item-cafe_variety",
+                "Item-cafe_origin",
+                "Item-cafe_grade",
+                "Employee-coffee_skills",
+                "Stock Entry-processing_stage"
+              ]
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "anacafe": {
+    "compliance": "2024",
+    "certifications": [
+      "Organic",
+      "Fair Trade",
+      "Rainforest Alliance",
+      "UTZ"
+    ],
+    "regulations": [
+      "MAGA",
+      "BANGUAT",
+      "SAT"
+    ]
+  }
+}
