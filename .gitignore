@@ -1,0 +1,37 @@
+# Archivos del sistema
+.bash_history
+.bashrc
+.cache/
+.dotnet/
+.npm/
+.profile
+.sudo_as_admin_successful
+.vscode-server/
+.wget-hsts
+
+# Archivos temporales
+*.tmp
+*.log
+*.pyc
+__pycache__/
+
+# Archivos de configuración local
+config.local.*
+site_config.json
+
+# Backups
+*.bak
+*.backup
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# ERPNext específicos
+sites/*/logs/
+sites/*/private/backups/
+sites/*/private/files/
