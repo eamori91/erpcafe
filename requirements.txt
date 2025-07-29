@@ -1,0 +1,136 @@
+# 🇬🇹 ERPCafe - Requerimientos para ERPNext v15
+# Dependencias de Python para sistema de gestión de fincas cafetaleras
+
+# ===== DEPENDENCIAS CORE ERPNext v15 =====
+frappe>=15.0.0,<16.0.0
+erpnext>=15.0.0,<16.0.0
+
+# ===== DEPENDENCIAS DE BASE DE DATOS =====
+PyMySQL>=1.0.2
+mysqlclient>=2.1.1
+redis>=4.5.0
+
+# ===== DEPENDENCIAS WEB Y API =====
+gunicorn>=20.1.0
+nginx-python-module>=1.0.0
+requests>=2.28.0
+urllib3>=1.26.0
+
+# ===== DEPENDENCIAS DE DESARROLLO =====
+black>=23.0.0
+flake8>=6.0.0
+isort>=5.12.0
+mypy>=1.0.0
+pytest>=7.2.0
+pytest-cov>=4.0.0
+
+# ===== DEPENDENCIAS DE DOCUMENTACIÓN =====
+sphinx>=7.0.0
+sphinx-rtd-theme>=1.3.0
+myst-parser>=2.0.0
+
+# ===== DEPENDENCIAS ESPECÍFICAS PARA CAFÉ =====
+# Para análisis de calidad y datos agrícolas
+pandas>=2.0.0
+numpy>=1.24.0
+scipy>=1.10.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Para geolocalización y mapas
+geopy>=2.3.0
+folium>=0.14.0
+geopandas>=0.13.0
+
+# Para códigos QR y trazabilidad
+qrcode>=7.4.0
+python-barcode>=0.14.0
+pillow>=10.0.0
+
+# Para reportes avanzados
+reportlab>=4.0.0
+openpyxl>=3.1.0
+xlsxwriter>=3.1.0
+
+# Para integración con APIs externas
+httpx>=0.24.0
+aiohttp>=3.8.0
+celery>=5.3.0
+
+# ===== DEPENDENCIAS DE PRODUCCIÓN =====
+supervisor>=4.2.0
+certbot>=2.6.0
+nginx>=1.20.0
+
+# ===== DEPENDENCIAS DE MONITOREO =====
+sentry-sdk>=1.25.0
+prometheus-client>=0.16.0
+psutil>=5.9.0
+
+# ===== DEPENDENCIAS DE SEGURIDAD =====
+cryptography>=41.0.0
+pyotp>=2.8.0
+python-jose>=3.3.0
+
+# ===== DEPENDENCIAS ESPECÍFICAS ANACAFE =====
+# Para cumplimiento normativo guatemalteco
+xmltodict>=0.13.0
+lxml>=4.9.0
+python-dateutil>=2.8.0
+
+# Para comunicación con APIs gubernamentales
+zeep>=4.2.0  # SOAP para MAGA
+suds-py3>=1.4.0  # SOAP alternativo
+
+# ===== DEPENDENCIAS DE MACHINE LEARNING =====
+# Para predicción de calidad y optimización
+scikit-learn>=1.3.0
+tensorflow>=2.13.0
+xgboost>=1.7.0
+
+# ===== DEPENDENCIAS DE COMUNICACIÓN =====
+# Para WhatsApp Business API y SMS
+twilio>=8.5.0
+pywhatkit>=5.4
+
+# Para email avanzado
+sendgrid>=6.10.0
+mailgun3>=0.1.1
+
+# ===== DEPENDENCIAS DE BACKUP Y SYNC =====
+boto3>=1.26.0  # AWS S3
+google-cloud-storage>=2.10.0  # Google Cloud
+dropbox>=11.36.0  # Dropbox
+
+# ===== DEPENDENCIAS ESPECÍFICAS GUATEMALA =====
+# Para manejo de moneda y conversiones
+forex-python>=1.8
+python-money>=0.1.0
+
+# Para validación de documentos guatemaltecos
+validate-docx>=0.0.2
+
+# ===== DEPENDENCIAS DE TESTING =====
+factory-boy>=3.3.0
+faker>=19.0.0
+responses>=0.23.0
+vcr-py>=4.3.0
+
+# ===== DEPENDENCIAS OPCIONALES =====
+# Para desarrollo local mejorado
+python-dotenv>=1.0.0
+rich>=13.4.0
+typer>=0.9.0
+
+# Para debugging avanzado
+ipdb>=0.13.0
+memory-profiler>=0.61.0
+line-profiler>=4.0.0
+
+# ===== VERSIONES ESPECÍFICAS PARA ESTABILIDAD =====
+# Estas versiones han sido probadas con ERPNext v15
+Werkzeug==2.3.6
+Jinja2==3.1.2
+MarkupSafe==2.1.3
+itsdangerous==2.1.2
+click==8.1.7

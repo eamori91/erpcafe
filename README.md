@@ -1,23 +1,21 @@
-# 🌱 Sistema ERPNext para Finca de Café - Guatemala
+# �🇹 ERPCafe - Sistema ERPNext v15 para Finca Cafetalera Guatemalteca
 
-Este proyecto contiene la configuración completa para implementar ERPNext en una finca de café en Guatemala, adaptado a las necesidades específicas de:
+[![ERPNext Version](https://img.shields.io/badge/ERPNext-v15.x-blue.svg)](https://erpnext.com)
+[![Flutter](https://img.shields.io/badge/Flutter-3.x-blue.svg)](https://flutter.dev)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Guatemala](https://img.shields.io/badge/Guatemala-Coffee-brown.svg)](https://anacafe.org)
 
-- Control de trabajadores y pagos por producción
-- Gestión de unidades de trabajo (cuerdas de 25x25m)
-- Trazabilidad completa del proceso del café
-- Manejo de adelantos, préstamos y pagos quincenales
+## 🌟 **DESCRIPCIÓN**
 
-## 📋 Características del Sistema
+ERPCafe es un sistema ERP especializado para fincas cafetaleras guatemaltecas, desarrollado sobre **ERPNext v15**. Automatiza desde el cultivo hasta la exportación internacional, cumpliendo con todas las regulaciones locales (ANACAFE, MAGA, BANGUAT) e internacionales (FDA, EU).
 
-### 🏗️ Doctypes Personalizados
+## 🚀 **CARACTERÍSTICAS PRINCIPALES**
 
-1. **Adelantos y Prestamos** - Control de anticipos financieros
-2. **Pago Quincenal** - Cálculo automático de sueldos
-3. **Unidad de Trabajo** - Gestión de cuerdas de cultivo
-4. **Actividad de Campo** - Registro de trabajo diario
-5. **Fermentación** - Control de piletas de fermentación
-6. **Patio Secado** - Gestión de patios de secado al sol
-7. **Secadora** - Control de secado mecánico
+### ☕ **Gestión Cafetalera Especializada**
+- 📍 Gestión de cuerdas con medidas guatemaltecas (varas)
+- 🌱 Variedades de café guatemalteco (Typica, Bourbon, Caturra, Anacafé 14)
+- 🔄 Procesos completos: Fermentación → Secado → Almacenamiento
+- 📊 Control de calidad y catación
 
 ### 🔄 Flujo del Proceso
 
